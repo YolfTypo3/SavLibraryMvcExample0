@@ -2,9 +2,9 @@
     "general": {
         "1": {
             "extensionKey": "sav_librarymvc_example0",
-            "libraryVersion": "11.5.0",
-            "section": "views",
-            "itemKey": 2,
+            "libraryVersion": "",
+            "section": "emconf",
+            "itemKey": 1,
             "pluginTitle": "SAV Library Mvc Example0 - Test",
             "libraryType": 2,
             "fieldKey": "",
@@ -15,13 +15,13 @@
             "showFieldConfiguration": "",
             "isLoadedExtension": true,
             "currentLibraryVersion": "1.0.1",
-            "keepExtLocalConf": 0,
-            "compatibility": 0,
+            "keepExtLocalConf": "",
+            "compatibility": "12x",
             "vendorName": "YolfTypo3",
-            "wrongCompatibility": false,
+            "wrongCompatibility": true,
             "addPluginIcon": 0,
-            "addWizardPluginIcon": 0,
-            "addTypoScriptConfiguration": 0,
+            "addWizardPluginIcon": "",
+            "addTypoScriptConfiguration": "",
             "upgrades": {
                 "YolfTypo3\\SavLibraryKickstarter\\Upgrade\\UpgradeToSavLibraryKickstarter_9_5_0": true
             },
@@ -944,14 +944,14 @@
                 }
             },
             "folderKeys": {
-                "3": 5,
+                "3": 4,
                 "2": 6,
                 "5": 1
             },
             "showAllFields": 0,
             "activeFields": {
                 "3": {
-                    "6": 15,
+                    "6": 23,
                     "7": 14,
                     "1": 19,
                     "5": 11,
@@ -1117,7 +1117,7 @@
                 }
             },
             "folderKeys": {
-                "3": 6,
+                "3": 4,
                 "2": 6
             },
             "activeFields": {
@@ -1194,7 +1194,7 @@
             },
             "folderKeys": {
                 "2": 6,
-                "3": 6
+                "3": 3
             },
             "label_userFunc": ""
         },
@@ -1588,13 +1588,13 @@
     "documentation": {
         "1": {
             "title": "SAV Librarymvc Example0",
-            "gitHubRepository": "YolfTypo3\/SavLibraryKickstarterExamples",
+            "gitHubRepository": "YolfTypo3\/SavLibraryMvcExample0",
             "gitHubBranch": "master\/sav_librarymvc_example0",
             "projectContact": "yolf.typo3@orange.fr",
             "projectDiscussion": "",
-            "projectHome": "https:\/\/github.com\/YolfTypo3\/SavLibraryKickstarterExamples",
-            "projectIssues": "https:\/\/github.com\/YolfTypo3\/SavLibraryKickstarterExamples\/issues",
-            "projectRepository": "https:\/\/github.com\/YolfTypo3\/SavLibraryKickstarterExamples",
+            "projectHome": "https:\/\/github.com\/YolfTypo3\/SavLibraryMvcExample0",
+            "projectIssues": "https:\/\/github.com\/YolfTypo3\/SavLibraryMvcExample0\/issues",
+            "projectRepository": "https:\/\/github.com\/YolfTypo3\/SavLibraryMvcExample0",
             "interSphinxMapping": "savlibrarykickstarter = https:\/\/docs.typo3.org\/p\/yolftypo3\/sav-library-kickstarter\/master\/en-us\/",
             "extensions": "",
             "keepSettingsCfg": 0,

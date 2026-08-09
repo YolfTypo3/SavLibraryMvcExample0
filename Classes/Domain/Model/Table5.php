@@ -19,28 +19,33 @@ namespace YolfTypo3\SavLibrarymvcExample0\Domain\Model;
  * Table5 model for the extension SavLibrarymvcExample0
  *
  */
+use TYPO3\CMS\Extbase\Annotation\Validate;
+use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 use YolfTypo3\SavLibraryMvc\Domain\Model\DefaultModel;
+use YolfTypo3\SavLibrarymvcExample0\Domain\Model\Table6;
+use YolfTypo3\SavLibrarymvcExample0\Domain\Repository\Table5Repository;
 
 class Table5 extends DefaultModel
 {
     /**
-     * @var \YolfTypo3\SavLibrarymvcExample0\Domain\Repository\Table5Repository
+     * @var Table5Repository
      */
     protected $repository = null;
 
+    #[Validate(validator: 'String')]
     /**
      * The <field1> variable.
      *
      * @var string
-     * @TYPO3\CMS\Extbase\Annotation\Validate("String")
      */
     protected $field1;
 
+    #[Lazy]
+    #[Cascade(value: 'remove')]
     /**
      * The <field2> variable.
      *
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\YolfTypo3\SavLibrarymvcExample0\Domain\Model\Table6>
-     * No Validation
+     * @var ObjectStorage<Table6>
      */
     protected $field2;
 
@@ -49,7 +54,15 @@ class Table5 extends DefaultModel
      */
     public function __construct()
     {
-        $this->field2 = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+        $this->initializeObject();
+    }
+
+    /**
+     * Object initializer.
+     */
+    public function initializeObject(): void
+    {
+        $this->field2 = new ObjectStorage();
     }
 
     /**
@@ -68,7 +81,7 @@ class Table5 extends DefaultModel
      * @param string $field1
      * @return void
      */
-    public function setField1($field1)
+    public function setField1($field1): void
     {
         $this->field1 = $field1;
     }
@@ -77,9 +90,9 @@ class Table5 extends DefaultModel
     /**
      * Getter for property <field2>.
      *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\YolfTypo3\SavLibrarymvcExample0\Domain\Model\Table6>
+     * @return ObjectStorage<Table6>
      */
-    public function getField2(): ?\TYPO3\CMS\Extbase\Persistence\ObjectStorage
+    public function getField2(): ?ObjectStorage
     {
         return $this->field2;
     }
@@ -87,22 +100,21 @@ class Table5 extends DefaultModel
     /**
      * Setter for property <field2>.
      *
-     * @param  \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\YolfTypo3\SavLibrarymvcExample0\Domain\Model\Table6> $field2
+     * @param  ObjectStorage<Table6> $field2
      * @return void
      */
-    public function setField2(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $field2)
+    public function setField2(ObjectStorage $field2): void
     {
         $this->field2 = $field2;
-        $this->field2->_memorizeCleanState();
     }
 
     /**
      * Adds a <field2>.
      *
-     * @param \YolfTypo3\SavLibrarymvcExample0\Domain\Model\Table6 $field2
+     * @param Table6 $field2
      * @return void
      */
-    public function addField2(\YolfTypo3\SavLibrarymvcExample0\Domain\Model\Table6 $field2)
+    public function addField2(Table6 $field2)
     {
         $this->field2->attach($field2);
     }
@@ -110,22 +122,11 @@ class Table5 extends DefaultModel
     /**
      * Removes a <field2>.
      *
-     * @param \YolfTypo3\SavLibrarymvcExample0\Domain\Model\Table6 $field2
+     * @param Table6 $field2
      * @return void
      */
-    public function removeField2(\YolfTypo3\SavLibrarymvcExample0\Domain\Model\Table6 $field2)
+    public function removeField2(Table6 $field2)
     {
         $this->field2->detach($field2);
     }
-
-    /**
-     * Unsets a <field2>.
-     *
-     * @return void
-     */
-    public function unsetField2()
-    {
-        unset($this->field2);
-    }
 }
-

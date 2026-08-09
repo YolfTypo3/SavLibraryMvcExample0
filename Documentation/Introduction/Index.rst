@@ -43,7 +43,7 @@ SAV Library Mvc extension.
 .. important::
 
   For more information, please read the
-  :ref:`SAV Library Kickstarter tutorial section <savlibrarykickstarter:tutorial>`.
+  :ref:`SAV Library Kickstarter tutorial section <yolftypo3/sav-library-kickstarter:tutorial>`.
   
   See also the `SAV Library Plus manual
   <https://docs.typo3.org/typo3cms/extensions/sav_library_plus/>`_

@@ -7,4 +7,3 @@ defined('TYPO3') or die();
     'Configuration/TypoScript',
     'SAV Library Mvc Example0 - Test'
 );
-

@@ -6,7 +6,7 @@
 SAV Library Configuration
 =========================
 
-This section details the configuration for the SAV Library MVC.
+This section details the configuration for the SAV Library Plus.
 
 Table of Contents
 =================
@@ -15,7 +15,6 @@ Table of Contents
    :maxdepth: 5
    :titlesonly:
    :glob:
-
+ 
    NewTables/Index
-   Forms/Index
-   
+   Forms/Index   

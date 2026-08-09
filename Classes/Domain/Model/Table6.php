@@ -19,37 +19,38 @@ namespace YolfTypo3\SavLibrarymvcExample0\Domain\Model;
  * Table6 model for the extension SavLibrarymvcExample0
  *
  */
+use TYPO3\CMS\Extbase\Annotation\Validate;
 use YolfTypo3\SavLibraryMvc\Domain\Model\DefaultModel;
+use YolfTypo3\SavLibrarymvcExample0\Domain\Repository\Table6Repository;
 
 class Table6 extends DefaultModel
 {
     /**
-     * @var \YolfTypo3\SavLibrarymvcExample0\Domain\Repository\Table6Repository
+     * @var Table6Repository
      */
     protected $repository = null;
 
+    #[Validate(validator: 'String')]
     /**
      * The <field1> variable.
      *
      * @var string
-     * @TYPO3\CMS\Extbase\Annotation\Validate("String")
      */
     protected $field1;
-
-    /**
-     * The <field2> variable.
-     *
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference>
-     * @TYPO3\CMS\Extbase\Annotation\ORM\Lazy
-     */
-    protected $field2;
 
     /**
      * Constructor.
      */
     public function __construct()
     {
-        $this->field2 = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+        $this->initializeObject();
+    }
+
+    /**
+     * Object initializer.
+     */
+    public function initializeObject(): void
+    {
     }
 
     /**
@@ -68,33 +69,9 @@ class Table6 extends DefaultModel
      * @param string $field1
      * @return void
      */
-    public function setField1($field1)
+    public function setField1($field1): void
     {
         $this->field1 = $field1;
     }
 
-    /**
-     * Getter for property <field2>.
-     *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
-     */
-    public function getField2(): ?\TYPO3\CMS\Extbase\Persistence\ObjectStorage
-    {
-        return $this->field2;
-    }
-
-    /**
-     * Setter for property <field2>.
-     *
-     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $field2
-     * @return void
-     */
-    public function setField2(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $field2)
-    {
-        $this->repository ??= \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\YolfTypo3\SavLibrarymvcExample0\Domain\Repository\Table6Repository::class);
-        $fieldConfiguration = $this->repository->getDataMapFactory()->getSavLibraryMvcFieldConfiguration('field2');
-        $this->field2 = $this->updateFileStorage($this->field2, $field2, $fieldConfiguration);
-    }
-
 }
-

@@ -25,5 +25,4 @@ routeEnhancers:
       - routePath: '/savlibrarymvcexample0/test/export/{special}'
         _controller: 'Test::export'
     requirements:
-      special: '[a-z0-9\-]+'
-     
+      special: '[a-z0-9\-]+'     

@@ -19,36 +19,45 @@ namespace YolfTypo3\SavLibrarymvcExample0\Domain\Model;
  * Table1 model for the extension SavLibrarymvcExample0
  *
  */
+use TYPO3\CMS\Extbase\Annotation\FileUpload;
+use TYPO3\CMS\Extbase\Annotation\Validate;
+use TYPO3\CMS\Extbase\Domain\Model\FileReference;
+use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 use YolfTypo3\SavLibraryMvc\Domain\Model\DefaultModel;
+use YolfTypo3\SavLibrarymvcExample0\Domain\Model\Table2;
+use YolfTypo3\SavLibrarymvcExample0\Domain\Model\Table3;
+use YolfTypo3\SavLibrarymvcExample0\Domain\Model\Table4;
+use YolfTypo3\SavLibrarymvcExample0\Domain\Model\Table5;
+use YolfTypo3\SavLibrarymvcExample0\Domain\Repository\Table1Repository;
 
 class Table1 extends DefaultModel
 {
     /**
-     * @var \YolfTypo3\SavLibrarymvcExample0\Domain\Repository\Table1Repository
+     * @var Table1Repository
      */
     protected $repository = null;
 
-    /**
-     * The <field2> variable.
-     *
-     * @var bool
-     * No Validation
-     */
-    protected $field2;
-
+    #[Validate(validator: 'String')]
     /**
      * The <field1> variable.
      *
      * @var string
-     * @TYPO3\CMS\Extbase\Annotation\Validate("String")
      */
     protected $field1;
 
+    #[Validate(validator: 'Boolean')]
+    /**
+     * The <field2> variable.
+     *
+     * @var bool
+     */
+    protected $field2;
+
+    #[Validate(validator: 'Text')]
     /**
      * The <field8> variable.
      *
      * @var string
-     * @TYPO3\CMS\Extbase\Annotation\Validate("Text")
      */
     protected $field8;
 
@@ -56,41 +65,36 @@ class Table1 extends DefaultModel
      * The <field9> variable.
      *
      * @var string
-     * No Validation
      */
     protected $field9;
 
+    #[Validate(validator: 'DateTime')]
     /**
      * The <field4> variable.
      *
      * @var \DateTime
-     * @TYPO3\CMS\Extbase\Annotation\Validate("DateTime")
-     * @TYPO3\CMS\Extbase\Annotation\Validate("YolfTypo3\SavLibraryMvc\Domain\Model\Validator\Empty")
      */
     protected $field4;
 
+    #[Validate(validator: 'DateTime')]
     /**
      * The <field5> variable.
      *
      * @var \DateTime
-     * @TYPO3\CMS\Extbase\Annotation\Validate("DateTime")
-     * @TYPO3\CMS\Extbase\Annotation\Validate("YolfTypo3\SavLibraryMvc\Domain\Model\Validator\Empty")
      */
     protected $field5;
 
     /**
-     * The <field10> variable.
+     * The <field24> variable.
      *
-     * @var int
-     * @TYPO3\CMS\Extbase\Annotation\Validate("Integer")
+     * @var string
      */
-    protected $field10;
+    protected $field24;
 
     /**
      * The <field7> variable.
      *
-     * @var \YolfTypo3\SavLibrarymvcExample0\Domain\Model\Table2
-     * No Validation
+     * @var Table2
      */
     protected $field7;
 
@@ -98,7 +102,6 @@ class Table1 extends DefaultModel
      * The <field6> variable.
      *
      * @var int
-     * No Validation
      */
     protected $field6;
 
@@ -106,31 +109,42 @@ class Table1 extends DefaultModel
      * The <field12> variable.
      *
      * @var string
-     * No Validation
      */
     protected $field12;
 
+    #[FileUpload(
+        validation: [
+            'fileSize' => ['minimum' => '0K', 'maximum' => '2M'],
+    		'maxFiles' => 2,
+            'mimeType' => [
+                'allowedMimeTypes' => ['image/avif','image/gif','image/jpeg','image/tiff','image/bmp','image/x-pcx','image/x-tga','image/png','application/pdf','application/illustrator','image/svg+xml','image/webp'],
+                'ignoreFileExtensionCheck' => false,
+                'notAllowedMessage' => 'LLL:EXT:sav_library_mvc/Resources/Private/Language/locallang_db.xlf:upload.failed',
+                'invalidExtensionMessage' => 'LLL:EXT:sav_library_mvc/Resources/Private/Language/locallang_db.xlf:upload.invalidFileExtension',
+            ],
+        ],
+        uploadFolder: '1:/user_upload/Test',
+    )]
     /**
      * The <field13> variable.
      *
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference>
-     * @TYPO3\CMS\Extbase\Annotation\ORM\Lazy
+     * @var ObjectStorage<FileReference>
      */
     protected $field13;
 
+    #[Validate(validator: 'String')]
     /**
      * The <field14> variable.
      *
      * @var string
-     * @TYPO3\CMS\Extbase\Annotation\Validate("String")
      */
     protected $field14;
 
+    #[Validate(validator: 'String')]
     /**
      * The <field15> variable.
      *
      * @var string
-     * @TYPO3\CMS\Extbase\Annotation\Validate("String")
      */
     protected $field15;
 
@@ -138,7 +152,6 @@ class Table1 extends DefaultModel
      * The <field16> variable.
      *
      * @var string
-     * No Validation
      */
     protected $field16;
 
@@ -146,31 +159,31 @@ class Table1 extends DefaultModel
      * The <field17> variable.
      *
      * @var string
-     * No Validation
      */
     protected $field17;
 
     /**
      * The <field18> variable.
      *
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\YolfTypo3\SavLibrarymvcExample0\Domain\Model\Table2>
-     * No Validation
+     * @var ObjectStorage<Table2>
      */
     protected $field18;
 
+    #[Lazy]
+    #[Cascade(value: 'remove')]
     /**
      * The <field19> variable.
      *
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\YolfTypo3\SavLibrarymvcExample0\Domain\Model\Table3>
-     * No Validation
+     * @var ObjectStorage<Table3>
      */
     protected $field19;
 
+    #[Lazy]
+    #[Cascade(value: 'remove')]
     /**
      * The <field20> variable.
      *
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\YolfTypo3\SavLibrarymvcExample0\Domain\Model\Table4>
-     * No Validation
+     * @var ObjectStorage<Table4>
      */
     protected $field20;
 
@@ -178,7 +191,6 @@ class Table1 extends DefaultModel
      * The <field3> variable.
      *
      * @var int
-     * No Validation
      */
     protected $field3;
 
@@ -186,7 +198,6 @@ class Table1 extends DefaultModel
      * The <field11> variable.
      *
      * @var string
-     * No Validation
      */
     protected $field11;
 
@@ -194,59 +205,46 @@ class Table1 extends DefaultModel
      * The <field21> variable.
      *
      * @var string
-     * No Validation
      */
     protected $field21;
 
+    #[Lazy]
+    #[Cascade(value: 'remove')]
     /**
      * The <field23> variable.
      *
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\YolfTypo3\SavLibrarymvcExample0\Domain\Model\Table5>
-     * No Validation
+     * @var ObjectStorage<Table5>
      */
     protected $field23;
 
+    #[Validate(validator: 'Integer')]
     /**
-     * The <field24> variable.
+     * The <field10> variable.
      *
-     * @var string
-     * No Validation
+     * @var int
      */
-    protected $field24;
+    protected $field10;
 
     /**
      * Constructor.
      */
     public function __construct()
     {
+        $this->initializeObject();
+    }
+
+    /**
+     * Object initializer.
+     */
+    public function initializeObject(): void
+    {
         $this->field4 = new \DateTime();
         $this->field5 = new \DateTime();
-        $this->field13 = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
-        $this->field18 = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
-        $this->field19 = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
-        $this->field20 = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
-        $this->field23 = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
-    }
-
-    /**
-     * Getter for property <field2>.
-     *
-     * @return bool
-     */
-    public function getField2()
-    {
-        return $this->field2;
-    }
-
-    /**
-     * Setter for property <field2>.
-     *
-     * @param bool $field2
-     * @return void
-     */
-    public function setField2($field2)
-    {
-        $this->field2 = $field2;
+        $this->field13 = $this->field13 ?? new ObjectStorage();
+        $this->field18 = new ObjectStorage();
+        $this->field19 = new ObjectStorage();
+        $this->field20 = new ObjectStorage();
+        $this->field23 = new ObjectStorage();
     }
 
     /**
@@ -265,9 +263,30 @@ class Table1 extends DefaultModel
      * @param string $field1
      * @return void
      */
-    public function setField1($field1)
+    public function setField1($field1): void
     {
         $this->field1 = $field1;
+    }
+
+    /**
+     * Getter for property <field2>.
+     *
+     * @return bool
+     */
+    public function getField2()
+    {
+        return $this->field2;
+    }
+
+    /**
+     * Setter for property <field2>.
+     *
+     * @param bool $field2
+     * @return void
+     */
+    public function setField2($field2): void
+    {
+        $this->field2 = $field2;
     }
 
     /**
@@ -286,7 +305,7 @@ class Table1 extends DefaultModel
      * @param string $field8
      * @return void
      */
-    public function setField8($field8)
+    public function setField8($field8): void
     {
         $this->field8 = $field8;
     }
@@ -307,7 +326,7 @@ class Table1 extends DefaultModel
      * @param string $field9
      * @return void
      */
-    public function setField9($field9)
+    public function setField9($field9): void
     {
         $this->field9 = $field9;
     }
@@ -328,7 +347,7 @@ class Table1 extends DefaultModel
      * @param \DateTime $field4
      * @return void
      */
-    public function setField4($field4)
+    public function setField4($field4): void
     {
         $this->field4 = $field4;
     }
@@ -349,36 +368,36 @@ class Table1 extends DefaultModel
      * @param \DateTime $field5
      * @return void
      */
-    public function setField5($field5)
+    public function setField5($field5): void
     {
         $this->field5 = $field5;
     }
 
     /**
-     * Getter for property <field10>.
+     * Getter for property <field24>.
      *
-     * @return int
+     * @return string
      */
-    public function getField10()
+    public function getField24()
     {
-        return $this->field10;
+        return $this->field24;
     }
 
     /**
-     * Setter for property <field10>.
+     * Setter for property <field24>.
      *
-     * @param int $field10
+     * @param string $field24
      * @return void
      */
-    public function setField10($field10)
+    public function setField24($field24): void
     {
-        $this->field10 = $field10;
+        $this->field24 = $field24;
     }
 
     /**
      * Getter for property <field7>.
      *
-     * @return \YolfTypo3\SavLibrarymvcExample0\Domain\Model\Table2
+     * @return Table2
      */
     public function getField7()
     {
@@ -388,10 +407,10 @@ class Table1 extends DefaultModel
     /**
      * Setter for property <field7>.
      *
-     * @param \YolfTypo3\SavLibrarymvcExample0\Domain\Model\Table2 $field7
+     * @param Table2 $field7
      * @return void
      */
-    public function setField7($field7)
+    public function setField7($field7): void
     {
         $this->field7 = $field7;
     }
@@ -412,7 +431,7 @@ class Table1 extends DefaultModel
      * @param int $field6
      * @return void
      */
-    public function setField6($field6)
+    public function setField6($field6): void
     {
         $this->field6 = $field6;
     }
@@ -433,7 +452,7 @@ class Table1 extends DefaultModel
      * @param string $field12
      * @return void
      */
-    public function setField12($field12)
+    public function setField12($field12): void
     {
         $this->field12 = $field12;
     }
@@ -441,9 +460,9 @@ class Table1 extends DefaultModel
     /**
      * Getter for property <field13>.
      *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
+     * @return ObjectStorage
      */
-    public function getField13(): ?\TYPO3\CMS\Extbase\Persistence\ObjectStorage
+    public function getField13(): ?ObjectStorage
     {
         return $this->field13;
     }
@@ -451,14 +470,12 @@ class Table1 extends DefaultModel
     /**
      * Setter for property <field13>.
      *
-     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $field13
+     * @param ObjectStorage $field13
      * @return void
      */
-    public function setField13(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $field13)
+    public function setField13(ObjectStorage $field13): void
     {
-        $this->repository ??= \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\YolfTypo3\SavLibrarymvcExample0\Domain\Repository\Table1Repository::class);
-        $fieldConfiguration = $this->repository->getDataMapFactory()->getSavLibraryMvcFieldConfiguration('field13');
-        $this->field13 = $this->updateFileStorage($this->field13, $field13, $fieldConfiguration);
+        $this->field13 = $field13;
     }
 
     /**
@@ -477,7 +494,7 @@ class Table1 extends DefaultModel
      * @param string $field14
      * @return void
      */
-    public function setField14($field14)
+    public function setField14($field14): void
     {
         $this->field14 = $field14;
     }
@@ -498,7 +515,7 @@ class Table1 extends DefaultModel
      * @param string $field15
      * @return void
      */
-    public function setField15($field15)
+    public function setField15($field15): void
     {
         $this->field15 = $field15;
     }
@@ -519,7 +536,7 @@ class Table1 extends DefaultModel
      * @param string $field16
      * @return void
      */
-    public function setField16($field16)
+    public function setField16($field16): void
     {
         $this->field16 = $field16;
     }
@@ -541,7 +558,7 @@ class Table1 extends DefaultModel
      * @param string
      * @return void
      */
-    public function setField17(string $field17)
+    public function setField17(string $field17): void
     {
         $this->field17 = $field17;
     }
@@ -549,9 +566,9 @@ class Table1 extends DefaultModel
     /**
      * Getter for property <field18>.
      *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\YolfTypo3\SavLibrarymvcExample0\Domain\Model\Table2>
+     * @return ObjectStorage<Table2>
      */
-    public function getField18(): ?\TYPO3\CMS\Extbase\Persistence\ObjectStorage
+    public function getField18(): ?ObjectStorage
     {
         return $this->field18;
     }
@@ -559,10 +576,10 @@ class Table1 extends DefaultModel
     /**
      * Setter for property <field18>.
      *
-     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\YolfTypo3\SavLibrarymvcExample0\Domain\Model\Table2> $field18
+     * @param ObjectStorage<Table2> $field18
      * @return void
      */
-    public function setField18(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $field18)
+    public function setField18(ObjectStorage $field18): void
     {
         $this->field18 = $field18;
     }
@@ -570,10 +587,10 @@ class Table1 extends DefaultModel
     /**
      * Adds a <field18>.
      *
-     * @param \YolfTypo3\SavLibrarymvcExample0\Domain\Model\Table2 $field18
+     * @param Table2 $field18
      * @return void
      */
-    public function addField18(\YolfTypo3\SavLibrarymvcExample0\Domain\Model\Table2 $field18)
+    public function addField18(Table2 $field18)
     {
         $this->field18->attach($field18);
     }
@@ -581,30 +598,20 @@ class Table1 extends DefaultModel
     /**
      * Removes a <field18>.
      *
-     * @param \YolfTypo3\SavLibrarymvcExample0\Domain\Model\Table2 $field18
+     * @param Table2 $field18
      * @return void
      */
-    public function removeField18(\YolfTypo3\SavLibrarymvcExample0\Domain\Model\Table2 $field18)
+    public function removeField18(Table2 $field18)
     {
         $this->field18->detach($field18);
     }
 
     /**
-     * Unsets a <field18>.
-     *
-     * @return void
-     */
-    public function unsetField18()
-    {
-        unset($this->field18);
-    }
-
-    /**
      * Getter for property <field19>.
      *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\YolfTypo3\SavLibrarymvcExample0\Domain\Model\Table3>
+     * @return ObjectStorage<Table3>
      */
-    public function getField19(): ?\TYPO3\CMS\Extbase\Persistence\ObjectStorage
+    public function getField19(): ?ObjectStorage
     {
         return $this->field19;
     }
@@ -612,22 +619,21 @@ class Table1 extends DefaultModel
     /**
      * Setter for property <field19>.
      *
-     * @param  \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\YolfTypo3\SavLibrarymvcExample0\Domain\Model\Table3> $field19
+     * @param  ObjectStorage<Table3> $field19
      * @return void
      */
-    public function setField19(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $field19)
+    public function setField19(ObjectStorage $field19): void
     {
         $this->field19 = $field19;
-        $this->field19->_memorizeCleanState();
     }
 
     /**
      * Adds a <field19>.
      *
-     * @param \YolfTypo3\SavLibrarymvcExample0\Domain\Model\Table3 $field19
+     * @param Table3 $field19
      * @return void
      */
-    public function addField19(\YolfTypo3\SavLibrarymvcExample0\Domain\Model\Table3 $field19)
+    public function addField19(Table3 $field19)
     {
         $this->field19->attach($field19);
     }
@@ -635,30 +641,20 @@ class Table1 extends DefaultModel
     /**
      * Removes a <field19>.
      *
-     * @param \YolfTypo3\SavLibrarymvcExample0\Domain\Model\Table3 $field19
+     * @param Table3 $field19
      * @return void
      */
-    public function removeField19(\YolfTypo3\SavLibrarymvcExample0\Domain\Model\Table3 $field19)
+    public function removeField19(Table3 $field19)
     {
         $this->field19->detach($field19);
     }
 
     /**
-     * Unsets a <field19>.
-     *
-     * @return void
-     */
-    public function unsetField19()
-    {
-        unset($this->field19);
-    }
-
-    /**
      * Getter for property <field20>.
      *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\YolfTypo3\SavLibrarymvcExample0\Domain\Model\Table4>
+     * @return ObjectStorage<Table4>
      */
-    public function getField20(): ?\TYPO3\CMS\Extbase\Persistence\ObjectStorage
+    public function getField20(): ?ObjectStorage
     {
         return $this->field20;
     }
@@ -666,22 +662,21 @@ class Table1 extends DefaultModel
     /**
      * Setter for property <field20>.
      *
-     * @param  \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\YolfTypo3\SavLibrarymvcExample0\Domain\Model\Table4> $field20
+     * @param  ObjectStorage<Table4> $field20
      * @return void
      */
-    public function setField20(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $field20)
+    public function setField20(ObjectStorage $field20): void
     {
         $this->field20 = $field20;
-        $this->field20->_memorizeCleanState();
     }
 
     /**
      * Adds a <field20>.
      *
-     * @param \YolfTypo3\SavLibrarymvcExample0\Domain\Model\Table4 $field20
+     * @param Table4 $field20
      * @return void
      */
-    public function addField20(\YolfTypo3\SavLibrarymvcExample0\Domain\Model\Table4 $field20)
+    public function addField20(Table4 $field20)
     {
         $this->field20->attach($field20);
     }
@@ -689,22 +684,12 @@ class Table1 extends DefaultModel
     /**
      * Removes a <field20>.
      *
-     * @param \YolfTypo3\SavLibrarymvcExample0\Domain\Model\Table4 $field20
+     * @param Table4 $field20
      * @return void
      */
-    public function removeField20(\YolfTypo3\SavLibrarymvcExample0\Domain\Model\Table4 $field20)
+    public function removeField20(Table4 $field20)
     {
         $this->field20->detach($field20);
-    }
-
-    /**
-     * Unsets a <field20>.
-     *
-     * @return void
-     */
-    public function unsetField20()
-    {
-        unset($this->field20);
     }
     /**
      * Getter for property <field3>.
@@ -722,7 +707,7 @@ class Table1 extends DefaultModel
      * @param int $field3
      * @return void
      */
-    public function setField3($field3)
+    public function setField3($field3): void
     {
         $this->field3 = $field3;
     }
@@ -743,7 +728,7 @@ class Table1 extends DefaultModel
      * @param string $field11
      * @return void
      */
-    public function setField11($field11)
+    public function setField11($field11): void
     {
         $this->field11 = $field11;
     }
@@ -764,7 +749,7 @@ class Table1 extends DefaultModel
      * @param string $field21
      * @return void
      */
-    public function setField21($field21)
+    public function setField21($field21): void
     {
         $this->field21 = $field21;
     }
@@ -773,9 +758,9 @@ class Table1 extends DefaultModel
     /**
      * Getter for property <field23>.
      *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\YolfTypo3\SavLibrarymvcExample0\Domain\Model\Table5>
+     * @return ObjectStorage<Table5>
      */
-    public function getField23(): ?\TYPO3\CMS\Extbase\Persistence\ObjectStorage
+    public function getField23(): ?ObjectStorage
     {
         return $this->field23;
     }
@@ -783,22 +768,21 @@ class Table1 extends DefaultModel
     /**
      * Setter for property <field23>.
      *
-     * @param  \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\YolfTypo3\SavLibrarymvcExample0\Domain\Model\Table5> $field23
+     * @param  ObjectStorage<Table5> $field23
      * @return void
      */
-    public function setField23(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $field23)
+    public function setField23(ObjectStorage $field23): void
     {
         $this->field23 = $field23;
-        $this->field23->_memorizeCleanState();
     }
 
     /**
      * Adds a <field23>.
      *
-     * @param \YolfTypo3\SavLibrarymvcExample0\Domain\Model\Table5 $field23
+     * @param Table5 $field23
      * @return void
      */
-    public function addField23(\YolfTypo3\SavLibrarymvcExample0\Domain\Model\Table5 $field23)
+    public function addField23(Table5 $field23)
     {
         $this->field23->attach($field23);
     }
@@ -806,43 +790,32 @@ class Table1 extends DefaultModel
     /**
      * Removes a <field23>.
      *
-     * @param \YolfTypo3\SavLibrarymvcExample0\Domain\Model\Table5 $field23
+     * @param Table5 $field23
      * @return void
      */
-    public function removeField23(\YolfTypo3\SavLibrarymvcExample0\Domain\Model\Table5 $field23)
+    public function removeField23(Table5 $field23)
     {
         $this->field23->detach($field23);
     }
-
     /**
-     * Unsets a <field23>.
+     * Getter for property <field10>.
      *
-     * @return void
+     * @return int
      */
-    public function unsetField23()
+    public function getField10()
     {
-        unset($this->field23);
-    }
-    /**
-     * Getter for property <field24>.
-     *
-     * @return string
-     */
-    public function getField24()
-    {
-        return $this->field24;
+        return $this->field10;
     }
 
     /**
-     * Setter for property <field24>.
+     * Setter for property <field10>.
      *
-     * @param string $field24
+     * @param int $field10
      * @return void
      */
-    public function setField24($field24)
+    public function setField10($field10): void
     {
-        $this->field24 = $field24;
+        $this->field10 = $field10;
     }
 
 }
-

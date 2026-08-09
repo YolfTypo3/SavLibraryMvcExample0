@@ -25,4 +25,3 @@ use TYPO3\CMS\Extbase\Persistence\Generic\Qom\ConstraintInterface;
 class Table2Repository extends \YolfTypo3\SavLibraryMvc\Domain\Repository\DefaultRepository
 {
 }
-

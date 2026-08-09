@@ -62,4 +62,3 @@ class Table1Repository extends \YolfTypo3\SavLibraryMvc\Domain\Repository\Defaul
         return $whereTags[$title];
     }
 }
-

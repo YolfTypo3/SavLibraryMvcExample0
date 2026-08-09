@@ -1,4 +1,3 @@
-
 .. include:: ../../../../Includes.txt
 
 .. _singleView.13354593:
@@ -10,17 +9,17 @@ Single view
 
 The view ``Test`` contains also the following views with condition.
 
-**View:** :ref:`View 1 <singleView.13354593.248948014>`
+:View: :ref:`View 1 <singleView.13354593.248948014>`
 
-**Condition:**
+:Condition:
 
 ::
 
    showIf = field21 = 1;
 
-**View:** :ref:`View 2 <singleView.13354593.223942160>`
+:View: :ref:`View 2 <singleView.13354593.223942160>`
 
-**Condition:**
+:Condition:
 
 ::
 
@@ -48,48 +47,30 @@ Folder: ``String, Text, Rte``
 
 .. _singleView.13354593.13354593.71333563.tx_savlibrarymvcexample0_domain_model_table1.field1:
 
-..  container:: row m-0 p-0
+.. card::
+   :class: mb-md-2
 
-    .. container:: card px-0 h-100
+  :Field: field1
 
-        ..  rst-class:: card-header
-
-            ..  rubric:: ``field1``
-
-        .. container:: card-body
-
-            :Label: String
-            :Type: :ref:`String <savlibrarykickstarter:string>`
+  :Type: :ref:`String <yolftypo3/sav-library-kickstarter:string>`
 
 .. _singleView.13354593.13354593.71333563.tx_savlibrarymvcexample0_domain_model_table1.field8:
 
-..  container:: row m-0 p-0
+.. card::
+   :class: mb-md-2
 
-    .. container:: card px-0 h-100
+  :Field: field8
 
-        ..  rst-class:: card-header
-
-            ..  rubric:: ``field8``
-
-        .. container:: card-body
-
-            :Label: Textarea
-            :Type: :ref:`Text <savlibrarykickstarter:textarea>`
+  :Type: :ref:`Text <yolftypo3/sav-library-kickstarter:textarea>`
 
 .. _singleView.13354593.13354593.71333563.tx_savlibrarymvcexample0_domain_model_table1.field9:
 
-..  container:: row m-0 p-0
+.. card::
+   :class: mb-md-2
 
-    .. container:: card px-0 h-100
+  :Field: field9
 
-        ..  rst-class:: card-header
-
-            ..  rubric:: ``field9``
-
-        .. container:: card-body
-
-            :Label: Rich text editor
-            :Type: :ref:`RichTextEditor <savlibrarykickstarter:richTextEditor>`
+  :Type: :ref:`RichTextEditor <yolftypo3/sav-library-kickstarter:richTextEditor>`
 
 
 Folder: ``Checkboxes and radio``
@@ -97,55 +78,37 @@ Folder: ``Checkboxes and radio``
 
 .. _singleView.13354593.13354593.230006371.tx_savlibrarymvcexample0_domain_model_table1.field2:
 
-..  container:: row m-0 p-0
+.. card::
+   :class: mb-md-2
 
-    .. container:: card px-0 h-100
+  :Field: field2
 
-        ..  rst-class:: card-header
-
-            ..  rubric:: ``field2``
-
-        .. container:: card-body
-
-            :Label: Checkbox
-            :Type: :ref:`Checkbox <savlibrarykickstarter:checkbox>`
+  :Type: :ref:`Checkbox <yolftypo3/sav-library-kickstarter:checkbox>`
 
 .. _singleView.13354593.13354593.230006371.tx_savlibrarymvcexample0_domain_model_table1.field3:
 
-..  container:: row m-0 p-0
+.. card::
+   :class: mb-md-2
 
-    .. container:: card px-0 h-100
+  :Field: field3
 
-        ..  rst-class:: card-header
+  :Type: :ref:`Checkboxes <yolftypo3/sav-library-kickstarter:checkboxes>`
 
-            ..  rubric:: ``field3``
+  :Configuration:
 
-        .. container:: card-body
+  ::
 
-            :Label: Checkboxes
-            :Type: :ref:`Checkboxes <savlibrarykickstarter:checkboxes>`
-
-            :Configuration:
-
-            ::
-
-                - cols = 1
+    - cols = 1
 
 
 .. _singleView.13354593.13354593.230006371.tx_savlibrarymvcexample0_domain_model_table1.field11:
 
-..  container:: row m-0 p-0
+.. card::
+   :class: mb-md-2
 
-    .. container:: card px-0 h-100
+  :Field: field11
 
-        ..  rst-class:: card-header
-
-            ..  rubric:: ``field11``
-
-        .. container:: card-body
-
-            :Label: Radio buttons
-            :Type: :ref:`RadioButtons <savlibrarykickstarter:radioButtons>`
+  :Type: :ref:`RadioButtons <yolftypo3/sav-library-kickstarter:radioButtons>`
 
 
 Folder: ``Dates and integer``
@@ -153,63 +116,39 @@ Folder: ``Dates and integer``
 
 .. _singleView.13354593.13354593.193105250.tx_savlibrarymvcexample0_domain_model_table1.field4:
 
-..  container:: row m-0 p-0
+.. card::
+   :class: mb-md-2
 
-    .. container:: card px-0 h-100
+  :Field: field4
 
-        ..  rst-class:: card-header
-
-            ..  rubric:: ``field4``
-
-        .. container:: card-body
-
-            :Label: Date
-            :Type: :ref:`Date <savlibrarykickstarter:date>`
+  :Type: :ref:`Date <yolftypo3/sav-library-kickstarter:date>`
 
 .. _singleView.13354593.13354593.193105250.tx_savlibrarymvcexample0_domain_model_table1.field5:
 
-..  container:: row m-0 p-0
+.. card::
+   :class: mb-md-2
 
-    .. container:: card px-0 h-100
+  :Field: field5
 
-        ..  rst-class:: card-header
-
-            ..  rubric:: ``field5``
-
-        .. container:: card-body
-
-            :Label: Date and time
-            :Type: :ref:`DateTime <savlibrarykickstarter:dateAndTime>`
+  :Type: :ref:`DateTime <yolftypo3/sav-library-kickstarter:dateAndTime>`
 
 .. _singleView.13354593.13354593.193105250.tx_savlibrarymvcexample0_domain_model_table1.field24:
 
-..  container:: row m-0 p-0
+.. card::
+   :class: mb-md-2
 
-    .. container:: card px-0 h-100
+  :Field: field24
 
-        ..  rst-class:: card-header
-
-            ..  rubric:: ``field24``
-
-        .. container:: card-body
-
-            :Label: Currency
-            :Type: :ref:`Currency <savlibrarykickstarter:numeric>`
+  :Type: :ref:`Currency <yolftypo3/sav-library-kickstarter:numeric>`
 
 .. _singleView.13354593.13354593.193105250.tx_savlibrarymvcexample0_domain_model_table1.field10:
 
-..  container:: row m-0 p-0
+.. card::
+   :class: mb-md-2
 
-    .. container:: card px-0 h-100
+  :Field: field10
 
-        ..  rst-class:: card-header
-
-            ..  rubric:: ``field10``
-
-        .. container:: card-body
-
-            :Label: Integer
-            :Type: :ref:`Integer <savlibrarykickstarter:numeric>`
+  :Type: :ref:`Integer <yolftypo3/sav-library-kickstarter:numeric>`
 
 
 Folder: ``Selectorbox``
@@ -217,33 +156,21 @@ Folder: ``Selectorbox``
 
 .. _singleView.13354593.13354593.188466241.tx_savlibrarymvcexample0_domain_model_table1.field7:
 
-..  container:: row m-0 p-0
+.. card::
+   :class: mb-md-2
 
-    .. container:: card px-0 h-100
+  :Field: field7
 
-        ..  rst-class:: card-header
-
-            ..  rubric:: ``field7``
-
-        .. container:: card-body
-
-            :Label: Relation 1:n (selectorbox)
-            :Type: :ref:`RelationOneToManyAsSelectorbox <savlibrarykickstarter:relation_1_n>`
+  :Type: :ref:`RelationOneToManyAsSelectorbox <yolftypo3/sav-library-kickstarter:relation_1_n>`
 
 .. _singleView.13354593.13354593.188466241.tx_savlibrarymvcexample0_domain_model_table1.field6:
 
-..  container:: row m-0 p-0
+.. card::
+   :class: mb-md-2
 
-    .. container:: card px-0 h-100
+  :Field: field6
 
-        ..  rst-class:: card-header
-
-            ..  rubric:: ``field6``
-
-        .. container:: card-body
-
-            :Label: Selectorbox
-            :Type: :ref:`Selectorbox <savlibrarykickstarter:selectorbox>`
+  :Type: :ref:`Selectorbox <yolftypo3/sav-library-kickstarter:selectorbox>`
 
 
 Folder: ``Links and files``
@@ -251,46 +178,34 @@ Folder: ``Links and files``
 
 .. _singleView.13354593.13354593.200635271.tx_savlibrarymvcexample0_domain_model_table1.field12:
 
-..  container:: row m-0 p-0
+.. card::
+   :class: mb-md-2
 
-    .. container:: card px-0 h-100
+  :Field: field12
 
-        ..  rst-class:: card-header
+  :Type: :ref:`Link <yolftypo3/sav-library-kickstarter:link>`
 
-            ..  rubric:: ``field12``
+  :Configuration:
 
-        .. container:: card-body
+  ::
 
-            :Label: Link
-            :Type: :ref:`Link <savlibrarykickstarter:link>`
-
-            :Configuration:
-
-            ::
-
-                - message = Click here
+    - message = Click here
 
 
 .. _singleView.13354593.13354593.200635271.tx_savlibrarymvcexample0_domain_model_table1.field13:
 
-..  container:: row m-0 p-0
+.. card::
+   :class: mb-md-2
 
-    .. container:: card px-0 h-100
+  :Field: field13
 
-        ..  rst-class:: card-header
+  :Type: :ref:`Files <yolftypo3/sav-library-kickstarter:filesAndImages>`
 
-            ..  rubric:: ``field13``
+  :Configuration:
 
-        .. container:: card-body
+  ::
 
-            :Label: Files
-            :Type: :ref:`Files <savlibrarykickstarter:filesAndImages>`
-
-            :Configuration:
-
-            ::
-
-                - func = makeNewWindowLink
+    - func = makeNewWindowLink
 
 
 
@@ -299,200 +214,134 @@ Folder: ``Relations``
 
 .. _singleView.13354593.13354593.235968261.tx_savlibrarymvcexample0_domain_model_table1.field17:
 
-..  container:: row m-0 p-0
+.. card::
+   :class: mb-md-2
 
-    .. container:: card px-0 h-100
+  :Field: field17
 
-        ..  rst-class:: card-header
-
-            ..  rubric:: ``field17``
-
-        .. container:: card-body
-
-            :Label: Comma-list n:n relation
-            :Type: :ref:`RelationManyToManyAsDoubleSelectorbox <savlibrarykickstarter:relation_n_n>`
+  :Type: :ref:`RelationManyToManyAsDoubleSelectorbox <yolftypo3/sav-library-kickstarter:relation_n_n>`
 
 .. _singleView.13354593.13354593.235968261.tx_savlibrarymvcexample0_domain_model_table1.field18:
 
-..  container:: row m-0 p-0
+.. card::
+   :class: mb-md-2
 
-    .. container:: card px-0 h-100
+  :Field: field18
 
-        ..  rst-class:: card-header
-
-            ..  rubric:: ``field18``
-
-        .. container:: card-body
-
-            :Label: True  n:n relation
-            :Type: :ref:`RelationManyToManyAsDoubleSelectorbox <savlibrarykickstarter:relation_n_n>`
+  :Type: :ref:`RelationManyToManyAsDoubleSelectorbox <yolftypo3/sav-library-kickstarter:relation_n_n>`
 
 .. _singleView.13354593.13354593.235968261.tx_savlibrarymvcexample0_domain_model_table1.field19:
 
-..  container:: row m-0 p-0
+.. card::
+   :class: mb-md-2
 
-    .. container:: card px-0 h-100
+  :Field: field19
 
-        ..  rst-class:: card-header
+  :Type: :ref:`RelationManyToManyAsSubform <yolftypo3/sav-library-kickstarter:relation_n_n>`
 
-            ..  rubric:: ``field19``
+  :Configuration:
 
-        .. container:: card-body
+  ::
 
-            :Label: Subform 1
-            :Type: :ref:`RelationManyToManyAsSubform <savlibrarykickstarter:relation_n_n>`
+    - maxSubformItems = 2
 
-            :Configuration:
+  .. card:: Subform Content
 
-            ::
-
-                - maxSubformItems = 2
-
-            :Subform Content:
-
-            
-            ..  container:: row m-0 p-0
-            
-                .. container:: card px-0 h-100
-            
-                    ..  rst-class:: card-header
-            
-                        ..  rubric:: ``field1``
-            
-                    .. container:: card-body
-            
-                        :Label: Field 1
-                        :Type: :ref:`String <savlibrarykickstarter:string>`
-            
-            
-            ..  container:: row m-0 p-0
-            
-                .. container:: card px-0 h-100
-            
-                    ..  rst-class:: card-header
-            
-                        ..  rubric:: ``field2``
-            
-                    .. container:: card-body
-            
-                        :Label: Field 2
-                        :Type: :ref:`Date <savlibrarykickstarter:date>`
-            
+   
+   .. card::
+      :class: mb-md-2
+   
+     :Field: field1
+   
+     :Type: :ref:`String <yolftypo3/sav-library-kickstarter:string>`
+   
+   
+   .. card::
+      :class: mb-md-2
+   
+     :Field: field2
+   
+     :Type: :ref:`Date <yolftypo3/sav-library-kickstarter:date>`
+   
 
 
 
 .. _singleView.13354593.13354593.235968261.tx_savlibrarymvcexample0_domain_model_table1.field20:
 
-..  container:: row m-0 p-0
+.. card::
+   :class: mb-md-2
 
-    .. container:: card px-0 h-100
+  :Field: field20
 
-        ..  rst-class:: card-header
+  :Type: :ref:`RelationManyToManyAsSubform <yolftypo3/sav-library-kickstarter:relation_n_n>`
 
-            ..  rubric:: ``field20``
+  :Configuration:
 
-        .. container:: card-body
+  ::
 
-            :Label: Subform 2
-            :Type: :ref:`RelationManyToManyAsSubform <savlibrarykickstarter:relation_n_n>`
+    - maxSubformItems = 1
 
-            :Configuration:
+  .. card:: Subform Content
 
-            ::
-
-                - maxSubformItems = 1
-
-            :Subform Content:
-
-            
-            ..  container:: row m-0 p-0
-            
-                .. container:: card px-0 h-100
-            
-                    ..  rst-class:: card-header
-            
-                        ..  rubric:: ``field1``
-            
-                    .. container:: card-body
-            
-                        :Label: Field 1
-                        :Type: :ref:`String <savlibrarykickstarter:string>`
-            
+   
+   .. card::
+      :class: mb-md-2
+   
+     :Field: field1
+   
+     :Type: :ref:`String <yolftypo3/sav-library-kickstarter:string>`
+   
 
 
 
 .. _singleView.13354593.13354593.235968261.tx_savlibrarymvcexample0_domain_model_table1.field23:
 
-..  container:: row m-0 p-0
+.. card::
+   :class: mb-md-2
 
-    .. container:: card px-0 h-100
+  :Field: field23
 
-        ..  rst-class:: card-header
+  :Type: :ref:`RelationManyToManyAsSubform <yolftypo3/sav-library-kickstarter:relation_n_n>`
 
-            ..  rubric:: ``field23``
+  :Configuration:
 
-        .. container:: card-body
+  ::
 
-            :Label: Subform 3
-            :Type: :ref:`RelationManyToManyAsSubform <savlibrarykickstarter:relation_n_n>`
+    - maxSubformItems = 2
 
-            :Configuration:
+  .. card:: Subform Content
 
-            ::
-
-                - maxSubformItems = 2
-
-            :Subform Content:
-
-            
-            ..  container:: row m-0 p-0
-            
-                .. container:: card px-0 h-100
-            
-                    ..  rst-class:: card-header
-            
-                        ..  rubric:: ``field1``
-            
-                    .. container:: card-body
-            
-                        :Label: Field 1
-                        :Type: :ref:`String <savlibrarykickstarter:string>`
-            
-            
-            ..  container:: row m-0 p-0
-            
-                .. container:: card px-0 h-100
-            
-                    ..  rst-class:: card-header
-            
-                        ..  rubric:: ``field2``
-            
-                    .. container:: card-body
-            
-                        :Label: Subform 1 in Subform 3
-                        :Type: :ref:`RelationManyToManyAsSubform <savlibrarykickstarter:relation_n_n>`
-            
-            
-            
-                        :Subform Content:
-            
-                        
-                        ..  container:: row m-0 p-0
-                        
-                            .. container:: card px-0 h-100
-                        
-                                ..  rst-class:: card-header
-                        
-                                    ..  rubric:: ``field1``
-                        
-                                .. container:: card-body
-                        
-                                    :Label: String
-                                    :Type: :ref:`String <savlibrarykickstarter:string>`
-                        
-            
-            
-            
+   
+   .. card::
+      :class: mb-md-2
+   
+     :Field: field1
+   
+     :Type: :ref:`String <yolftypo3/sav-library-kickstarter:string>`
+   
+   
+   .. card::
+      :class: mb-md-2
+   
+     :Field: field2
+   
+     :Type: :ref:`RelationManyToManyAsSubform <yolftypo3/sav-library-kickstarter:relation_n_n>`
+   
+   
+   
+     .. card:: Subform Content
+   
+      
+      .. card::
+         :class: mb-md-2
+      
+        :Field: field1
+      
+        :Type: :ref:`String <yolftypo3/sav-library-kickstarter:string>`
+      
+   
+   
+   
 
 
 
@@ -502,56 +351,38 @@ Folder: ``Graphs``
 
 .. _singleView.13354593.13354593.186619741.tx_savlibrarymvcexample0_domain_model_table1.field14:
 
-..  container:: row m-0 p-0
+.. card::
+   :class: mb-md-2
 
-    .. container:: card px-0 h-100
+  :Field: field14
 
-        ..  rst-class:: card-header
-
-            ..  rubric:: ``field14``
-
-        .. container:: card-body
-
-            :Label: Data
-            :Type: :ref:`String <savlibrarykickstarter:string>`
+  :Type: :ref:`String <yolftypo3/sav-library-kickstarter:string>`
 
 .. _singleView.13354593.13354593.186619741.tx_savlibrarymvcexample0_domain_model_table1.field15:
 
-..  container:: row m-0 p-0
+.. card::
+   :class: mb-md-2
 
-    .. container:: card px-0 h-100
+  :Field: field15
 
-        ..  rst-class:: card-header
-
-            ..  rubric:: ``field15``
-
-        .. container:: card-body
-
-            :Label: Legend
-            :Type: :ref:`String <savlibrarykickstarter:string>`
+  :Type: :ref:`String <yolftypo3/sav-library-kickstarter:string>`
 
 .. _singleView.13354593.13354593.186619741.tx_savlibrarymvcexample0_domain_model_table1.field16:
 
-..  container:: row m-0 p-0
+.. card::
+   :class: mb-md-2
 
-    .. container:: card px-0 h-100
+  :Field: field16
 
-        ..  rst-class:: card-header
+  :Type: :ref:`Graph <yolftypo3/sav-library-kickstarter:graph>`
 
-            ..  rubric:: ``field16``
+  :Configuration:
 
-        .. container:: card-body
+  ::
 
-            :Label: Graph
-            :Type: :ref:`Graph <savlibrarykickstarter:graph>`
-
-            :Configuration:
-
-            ::
-
-                - graphTemplate = typo3conf/ext/sav_charts/Resources/Private/Templates/ChartsExamples/PieChartAdvanced.xml
-                - tags = marker#title=Graph in SAV Library Plus, data#data=notEmpty[###field14###],
-                  data#labels=notEmpty[###field15###]
+    - graphTemplate = EXT:sav_charts/Resources/Private/Templates/ChartsExamples/PieChartAdvanced.xml
+    - tags = marker#title=Graph in SAV Library Mvc, data#data=notEmpty[###field14###],
+     data#labels=notEmpty[###field15###]
 
 
 
@@ -574,65 +405,41 @@ Title Bar
 Selected Fields
 ---------------
 
-.. _singleView.13354593.248948014.222419149.tx_savlibrarymvcexample0_domain_model_table1.field2:
+.. _singleView.13354593.248948014.217895432.tx_savlibrarymvcexample0_domain_model_table1.field2:
 
-..  container:: row m-0 p-0
+.. card::
+   :class: mb-md-2
 
-    .. container:: card px-0 h-100
+  :Field: field2
 
-        ..  rst-class:: card-header
+  :Type: :ref:`Checkbox <yolftypo3/sav-library-kickstarter:checkbox>`
 
-            ..  rubric:: ``field2``
+.. _singleView.13354593.248948014.217895432.tx_savlibrarymvcexample0_domain_model_table1.field3:
 
-        .. container:: card-body
+.. card::
+   :class: mb-md-2
 
-            :Label: Checkbox
-            :Type: :ref:`Checkbox <savlibrarykickstarter:checkbox>`
+  :Field: field3
 
-.. _singleView.13354593.248948014.222419149.tx_savlibrarymvcexample0_domain_model_table1.field3:
+  :Type: :ref:`Checkboxes <yolftypo3/sav-library-kickstarter:checkboxes>`
 
-..  container:: row m-0 p-0
+.. _singleView.13354593.248948014.217895432.tx_savlibrarymvcexample0_domain_model_table1.field4:
 
-    .. container:: card px-0 h-100
+.. card::
+   :class: mb-md-2
 
-        ..  rst-class:: card-header
+  :Field: field4
 
-            ..  rubric:: ``field3``
+  :Type: :ref:`Date <yolftypo3/sav-library-kickstarter:date>`
 
-        .. container:: card-body
+.. _singleView.13354593.248948014.217895432.tx_savlibrarymvcexample0_domain_model_table1.field5:
 
-            :Label: Checkboxes
-            :Type: :ref:`Checkboxes <savlibrarykickstarter:checkboxes>`
+.. card::
+   :class: mb-md-2
 
-.. _singleView.13354593.248948014.222419149.tx_savlibrarymvcexample0_domain_model_table1.field4:
+  :Field: field5
 
-..  container:: row m-0 p-0
-
-    .. container:: card px-0 h-100
-
-        ..  rst-class:: card-header
-
-            ..  rubric:: ``field4``
-
-        .. container:: card-body
-
-            :Label: Date
-            :Type: :ref:`Date <savlibrarykickstarter:date>`
-
-.. _singleView.13354593.248948014.222419149.tx_savlibrarymvcexample0_domain_model_table1.field5:
-
-..  container:: row m-0 p-0
-
-    .. container:: card px-0 h-100
-
-        ..  rst-class:: card-header
-
-            ..  rubric:: ``field5``
-
-        .. container:: card-body
-
-            :Label: Date and time
-            :Type: :ref:`DateTime <savlibrarykickstarter:dateAndTime>`
+  :Type: :ref:`DateTime <yolftypo3/sav-library-kickstarter:dateAndTime>`
 
 
 
@@ -658,33 +465,21 @@ Folder: ``Checkboxes``
 
 .. _singleView.13354593.223942160.205676329.tx_savlibrarymvcexample0_domain_model_table1.field2:
 
-..  container:: row m-0 p-0
+.. card::
+   :class: mb-md-2
 
-    .. container:: card px-0 h-100
+  :Field: field2
 
-        ..  rst-class:: card-header
-
-            ..  rubric:: ``field2``
-
-        .. container:: card-body
-
-            :Label: Checkbox
-            :Type: :ref:`Checkbox <savlibrarykickstarter:checkbox>`
+  :Type: :ref:`Checkbox <yolftypo3/sav-library-kickstarter:checkbox>`
 
 .. _singleView.13354593.223942160.205676329.tx_savlibrarymvcexample0_domain_model_table1.field3:
 
-..  container:: row m-0 p-0
+.. card::
+   :class: mb-md-2
 
-    .. container:: card px-0 h-100
+  :Field: field3
 
-        ..  rst-class:: card-header
-
-            ..  rubric:: ``field3``
-
-        .. container:: card-body
-
-            :Label: Checkboxes
-            :Type: :ref:`Checkboxes <savlibrarykickstarter:checkboxes>`
+  :Type: :ref:`Checkboxes <yolftypo3/sav-library-kickstarter:checkboxes>`
 
 
 Folder: ``Dates``
@@ -692,34 +487,18 @@ Folder: ``Dates``
 
 .. _singleView.13354593.223942160.99666494.tx_savlibrarymvcexample0_domain_model_table1.field4:
 
-..  container:: row m-0 p-0
+.. card::
+   :class: mb-md-2
 
-    .. container:: card px-0 h-100
+  :Field: field4
 
-        ..  rst-class:: card-header
-
-            ..  rubric:: ``field4``
-
-        .. container:: card-body
-
-            :Label: Date
-            :Type: :ref:`Date <savlibrarykickstarter:date>`
+  :Type: :ref:`Date <yolftypo3/sav-library-kickstarter:date>`
 
 .. _singleView.13354593.223942160.99666494.tx_savlibrarymvcexample0_domain_model_table1.field5:
 
-..  container:: row m-0 p-0
+.. card::
+   :class: mb-md-2
 
-    .. container:: card px-0 h-100
+  :Field: field5
 
-        ..  rst-class:: card-header
-
-            ..  rubric:: ``field5``
-
-        .. container:: card-body
-
-            :Label: Date and time
-            :Type: :ref:`DateTime <savlibrarykickstarter:dateAndTime>`
-
-
-
-
+  :Type: :ref:`DateTime <yolftypo3/sav-library-kickstarter:dateAndTime>`

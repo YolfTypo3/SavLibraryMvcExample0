@@ -1,24 +1,17 @@
 <?php
-
 defined('TYPO3') or die();
 
-$typo3Version = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Information\Typo3Version::class);
-if (version_compare($typo3Version->getVersion(), '10.0', '<')) {
-    $interface = [
-    	'showRecordFieldList' => ''
-    ];
-} else {
-    $interface = [];
-}
 return [
     'ctrl' => [
         'title' => 'LLL:EXT:sav_librarymvc_example0/Resources/Private/Language/locallang_db.xlf:tx_savlibrarymvcexample0_domain_model_table1',
         'label' => 'uid',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
-        'cruser_id' => 'cruser_id',
         'default_sortby' => 'crdate',
         'delete' => 'deleted',
+        'security' => [
+            'ignorePageTypeRestriction' => true,
+        ],
         'enablecolumns' => [
             'disabled' => 'hidden',
         ],
@@ -28,6 +21,42 @@ return [
                 'ctrl' => [
                 ],
                 'columns' => [
+                    'field1' => [
+                        'fieldType' => 'String',
+                        'config' => [
+                            1 => [
+                                'func' => 'makeItemLink',
+                                'orderLinkInTitle' => '1',
+                                'orderLinkInTitleSetup' => ':value:ascdesc',
+                                'selected' => 1,
+                             ],
+                            2 => [
+                                'selected' => 1,
+                             ],
+                            3 => [
+                                'edit' => 1,
+                                'selected' => 1,
+                             ],
+                            4 => [
+                                'selected' => 0,
+                             ],
+                            5 => [
+                                'selected' => 0,
+                             ],
+                        ],
+                        'folders' => [
+                            2 => '2',
+                            3 => '2',
+                            5 => '0',
+                        ],
+                       'order' => [
+                            1 => 1,
+                            2 => 1,
+                            3 => 2,
+                            4 => 1,
+                            5 => 1,
+                        ],
+                    ],
                     'field2' => [
                         'fieldType' => 'Checkbox',
                         'config' => [
@@ -64,42 +93,6 @@ return [
                             3 => 1,
                             4 => 2,
                             5 => 2,
-                        ],
-                    ],
-                    'field1' => [
-                        'fieldType' => 'String',
-                        'config' => [
-                            1 => [
-                                'func' => 'makeItemLink',
-                                'orderLinkInTitle' => '1',
-                                'orderLinkInTitleSetup' => ':value:ascdesc',
-                                'selected' => 1,
-                             ],
-                            2 => [
-                                'selected' => 1,
-                             ],
-                            3 => [
-                                'edit' => 1,
-                                'selected' => 1,
-                             ],
-                            4 => [
-                                'selected' => 0,
-                             ],
-                            5 => [
-                                'selected' => 0,
-                             ],
-                        ],
-                        'folders' => [
-                            2 => '2',
-                            3 => '2',
-                            5 => '0',
-                        ],
-                       'order' => [
-                            1 => 1,
-                            2 => 1,
-                            3 => 2,
-                            4 => 1,
-                            5 => 1,
                         ],
                     ],
                     'field8' => [
@@ -238,8 +231,8 @@ return [
                             5 => 6,
                         ],
                     ],
-                    'field10' => [
-                        'fieldType' => 'Integer',
+                    'field24' => [
+                        'fieldType' => 'Currency',
                         'config' => [
                             1 => [
                                 'selected' => 0,
@@ -259,16 +252,15 @@ return [
                              ],
                         ],
                         'folders' => [
-                            2 => '3',
                             3 => '3',
-                            5 => '0',
+                            2 => '3',
                         ],
                        'order' => [
-                            1 => 9,
-                            2 => 24,
-                            3 => 7,
-                            4 => 8,
-                            5 => 7,
+                            1 => 24,
+                            2 => 7,
+                            3 => 24,
+                            4 => 24,
+                            5 => 24,
                         ],
                     ],
                     'field7' => [
@@ -377,11 +369,9 @@ return [
                         'fieldType' => 'Files',
                         'config' => [
                             1 => [
-                                'imageFiles' => 1,
                                 'selected' => 0,
                              ],
                             2 => [
-                                'imageFiles' => 1,
                                 'func' => 'makeNewWindowLink',
                                 'selected' => 1,
                              ],
@@ -390,11 +380,9 @@ return [
                                 'selected' => 1,
                              ],
                             4 => [
-                                'imageFiles' => 1,
                                 'selected' => 0,
                              ],
                             5 => [
-                                'imageFiles' => 1,
                                 'selected' => 0,
                              ],
                         ],
@@ -484,8 +472,8 @@ return [
                                 'selected' => 0,
                              ],
                             2 => [
-                                'graphTemplate' => 'typo3conf/ext/sav_charts/Resources/Private/Templates/ChartsExamples/PieChartAdvanced.xml',
-                                'tags' => 'marker#title=Graph in SAV Library Plus, data#data=notEmpty[###field14###],
+                                'graphTemplate' => 'EXT:sav_charts/Resources/Private/Templates/ChartsExamples/PieChartAdvanced.xml',
+                                'tags' => 'marker#title=Graph in SAV Library Mvc, data#data=notEmpty[###field14###],
         data#labels=notEmpty[###field15###]',
                                 'selected' => 1,
                              ],
@@ -855,8 +843,8 @@ return [
                             5 => 23,
                         ],
                     ],
-                    'field24' => [
-                        'fieldType' => 'Currency',
+                    'field10' => [
+                        'fieldType' => 'Integer',
                         'config' => [
                             1 => [
                                 'selected' => 0,
@@ -876,26 +864,36 @@ return [
                              ],
                         ],
                         'folders' => [
-                            3 => '3',
                             2 => '3',
+                            3 => '3',
+                            5 => '0',
                         ],
                        'order' => [
-                            1 => 24,
-                            2 => 7,
-                            3 => 24,
-                            4 => 24,
-                            5 => 24,
+                            1 => 9,
+                            2 => 24,
+                            3 => 7,
+                            4 => 8,
+                            5 => 7,
                         ],
                     ],
                 ],
             ],
         ],
     ],
-    'interface' => $interface,
+    'interface' => [],
     'columns' => [
+        'cruser_id' => [
+            'exclude' => true,
+            'label' => 'cruser_id',
+            'config' => [
+                'type' => 'number',
+                'format' => 'decimal',
+                'default' => 0
+            ],
+        ],
         'hidden' => [
-            'exclude' => 1,
-            'label'  => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf.xlf:LGL.hidden',
+            'exclude' => true,
+            'label'  => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.hidden',
             'config' => [
                 'type'  => 'check',
                 'default' => 0,
@@ -906,86 +904,83 @@ return [
                 'type' => 'passthrough',
             ],
         ],
+        'field1' => [
+            'exclude' => true,
+            'label'  => 'LLL:EXT:sav_librarymvc_example0/Resources/Private/Language/locallang_db.xlf:tx_savlibrarymvcexample0_domain_model_table1.field1',
+            'config' => [
+                'type' => 'input',
+                'size' => 30,
+                'eval' => 'trim, required'
+            ],
+        ],
         'field2' => [
-            'exclude' => 1,
+            'exclude' => true,
             'label'  => 'LLL:EXT:sav_librarymvc_example0/Resources/Private/Language/locallang_db.xlf:tx_savlibrarymvcexample0_domain_model_table1.field2',
             'config' => [
                 'type' => 'check',
                 'default' => 0
             ],
         ],
-        'field1' => [
-            'exclude' => 1,
-            'label'  => 'LLL:EXT:sav_librarymvc_example0/Resources/Private/Language/locallang_db.xlf:tx_savlibrarymvcexample0_domain_model_table1.field1',
-            'config' => [
-                'type' => 'input',
-                'size' => '30',
-                'eval' => 'trim,required'
-            ],
-        ],
         'field8' => [
-            'exclude' => 1,
+            'exclude' => true,
             'label'  => 'LLL:EXT:sav_librarymvc_example0/Resources/Private/Language/locallang_db.xlf:tx_savlibrarymvcexample0_domain_model_table1.field8',
             'config' => [
                 'type' => 'text',
-                'cols' => '50',
-                'rows' => '4',
+                'cols' => 50,
+                'rows' => 4,
             ],
         ],
         'field9' => [
-            'exclude' => 1,
+            'exclude' => true,
             'label'  => 'LLL:EXT:sav_librarymvc_example0/Resources/Private/Language/locallang_db.xlf:tx_savlibrarymvcexample0_domain_model_table1.field9',
             'config' => [
                 'type' => 'text',
-                'cols' => '30',
-                'rows' => '5',
+                'cols' => 30,
+                'rows' => 5,
                 'enableRichtext' => true,
             ],
         ],
         'field4' => [
-            'exclude' => 1,
+            'exclude' => true,
             'label'  => 'LLL:EXT:sav_librarymvc_example0/Resources/Private/Language/locallang_db.xlf:tx_savlibrarymvcexample0_domain_model_table1.field4',
             'config' => [
-                'type' => 'input',
-                'renderType' => 'inputDateTime',
-                'eval' => 'date',
-                'default' => '0'
+                'type' => 'datetime',
+                'format' => 'date',
+                'size' => 20,
+                'default' => 0
             ],
         ],
         'field5' => [
-            'exclude' => 1,
+            'exclude' => true,
             'label'  => 'LLL:EXT:sav_librarymvc_example0/Resources/Private/Language/locallang_db.xlf:tx_savlibrarymvcexample0_domain_model_table1.field5',
             'config' => [
-                'type' => 'input',
-                'renderType' => 'inputDateTime',
-                'eval' => 'datetime',
-                'default' => '0'
+                'type' => 'datetime',
+                'format' => 'datetime',
+                'size' => 20,
+                'default' => 0
             ],
         ],
-        'field10' => [
-            'exclude' => 1,
-            'label'  => 'LLL:EXT:sav_librarymvc_example0/Resources/Private/Language/locallang_db.xlf:tx_savlibrarymvcexample0_domain_model_table1.field10',
+        'field24' => [
+            'exclude' => true,
+            'label'  => 'LLL:EXT:sav_librarymvc_example0/Resources/Private/Language/locallang_db.xlf:tx_savlibrarymvcexample0_domain_model_table1.field24',
             'config' => [
-                'type'  => 'input',
-                'size'  => '4',
-                'max' => '6',
-                'eval'  => 'int',
-                'checkbox'  => '0',
-                'range' => [
-                    'upper'  => '999999',
-                    'lower'  => '0'
-                ],
+                'type' => 'number',
+                'format' => 'decimal',
+                'size'  => 6,
                 'default' => 0
             ],
         ],
         'field7' => [
-            'exclude' => 1,
+            'exclude' => true,
             'label'  => 'LLL:EXT:sav_librarymvc_example0/Resources/Private/Language/locallang_db.xlf:tx_savlibrarymvcexample0_domain_model_table1.field7',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
                 'items' => [
-                    ['LLL:EXT:sav_librarymvc_example0/Resources/Private/Language/locallang_db.xlf:tx_savlibrarymvcexample0_domain_model_table1.field7.I.0', 0],
+                    [
+                        'label' => 'LLL:EXT:sav_librarymvc_example0/Resources/Private/Language/locallang_db.xlf:tx_savlibrarymvcexample0_domain_model_table1.field7.I.0',
+                        'value'  => 0
+                    ],
                 ],
                 'foreign_table' => 'tx_savlibrarymvcexample0_domain_model_table2',
                 'foreign_table_where' => 'AND 1 ',
@@ -995,71 +990,77 @@ return [
             ],
         ],
         'field6' => [
-            'exclude' => 1,
+            'exclude' => true,
             'label'  => 'LLL:EXT:sav_librarymvc_example0/Resources/Private/Language/locallang_db.xlf:tx_savlibrarymvcexample0_domain_model_table1.field6',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
                 'items' => [
-                    ['LLL:EXT:sav_librarymvc_example0/Resources/Private/Language/locallang_db.xlf:tx_savlibrarymvcexample0_domain_model_table1.field6.I.1', '1'],
-                    ['LLL:EXT:sav_librarymvc_example0/Resources/Private/Language/locallang_db.xlf:tx_savlibrarymvcexample0_domain_model_table1.field6.I.2', '2'],
-                    ['LLL:EXT:sav_librarymvc_example0/Resources/Private/Language/locallang_db.xlf:tx_savlibrarymvcexample0_domain_model_table1.field6.I.3', '3'],
+                    [
+                        'label' => 'LLL:EXT:sav_librarymvc_example0/Resources/Private/Language/locallang_db.xlf:tx_savlibrarymvcexample0_domain_model_table1.field6.I.1',
+                        'value' => '1'
+                    ],
+                    [
+                        'label' => 'LLL:EXT:sav_librarymvc_example0/Resources/Private/Language/locallang_db.xlf:tx_savlibrarymvcexample0_domain_model_table1.field6.I.2',
+                        'value' => '2'
+                    ],
+                    [
+                        'label' => 'LLL:EXT:sav_librarymvc_example0/Resources/Private/Language/locallang_db.xlf:tx_savlibrarymvcexample0_domain_model_table1.field6.I.3',
+                        'value' => '3'
+                    ],
                 ],
                 'size' => 1,
                 'maxitems' => 1,
             ],
         ],
         'field12' => [
-            'exclude' => 1,
+            'exclude' => true,
             'label'  => 'LLL:EXT:sav_librarymvc_example0/Resources/Private/Language/locallang_db.xlf:tx_savlibrarymvcexample0_domain_model_table1.field12',
             'config' => [
-                'type'  => 'input',
-                'renderType' => 'inputLink',
-                'size'  => '15',
-                'max' => '255',
-                'checkbox'  => '',
-                'eval'  => 'trim',
+                'type' => 'link',
+                'size' => 20,
+                'appearance' => [
+                    'enableBrowser' => false,
+                    'browserTitle' => 'Browser title',
+                ],
             ],
         ],
         'field13' => [
-            'exclude' => 1,
+            'exclude' => true,
             'label'  => 'LLL:EXT:sav_librarymvc_example0/Resources/Private/Language/locallang_db.xlf:tx_savlibrarymvcexample0_domain_model_table1.field13',
-            'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
-                'field13',
-                [
-                    'maxitems' => 2
-                ],
-                $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext'],
-                ''
-            ),
+            'config' => [
+                'type' => 'file',
+                'maxitems' => 2,
+                'allowed' => 'common-image-types',
+            ],
         ],
         'field14' => [
-            'exclude' => 1,
+            'exclude' => true,
             'label'  => 'LLL:EXT:sav_librarymvc_example0/Resources/Private/Language/locallang_db.xlf:tx_savlibrarymvcexample0_domain_model_table1.field14',
             'config' => [
                 'type' => 'input',
-                'size' => '30',
+                'size' => 30,
                 'eval' => 'trim'
             ],
         ],
         'field15' => [
-            'exclude' => 1,
+            'exclude' => true,
             'label'  => 'LLL:EXT:sav_librarymvc_example0/Resources/Private/Language/locallang_db.xlf:tx_savlibrarymvcexample0_domain_model_table1.field15',
             'config' => [
                 'type' => 'input',
-                'size' => '30',
+                'size' => 30,
                 'eval' => 'trim'
             ],
         ],
         'field16' => [
-            'exclude' => 1,
+            'exclude' => true,
             'label'  => 'LLL:EXT:sav_librarymvc_example0/Resources/Private/Language/locallang_db.xlf:tx_savlibrarymvcexample0_domain_model_table1.field16',
             'config' => [
                 'type' => 'none',
             ],
         ],
         'field17' => [
-            'exclude' => 1,
+            'exclude' => true,
             'label'  => 'LLL:EXT:sav_librarymvc_example0/Resources/Private/Language/locallang_db.xlf:tx_savlibrarymvcexample0_domain_model_table1.field17',
             'config' => [
                 'type' => 'select',
@@ -1072,7 +1073,7 @@ return [
             ],
         ],
         'field18' => [
-            'exclude' => 1,
+            'exclude' => true,
             'label'  => 'LLL:EXT:sav_librarymvc_example0/Resources/Private/Language/locallang_db.xlf:tx_savlibrarymvcexample0_domain_model_table1.field18',
             'config' => [
                 'type' => 'select',
@@ -1086,7 +1087,7 @@ return [
             ],
         ],
         'field19' => [
-            'exclude' => 1,
+            'exclude' => true,
             'label'  => 'LLL:EXT:sav_librarymvc_example0/Resources/Private/Language/locallang_db.xlf:tx_savlibrarymvcexample0_domain_model_table1.field19',
             'config' => [
                 'type' => 'inline',
@@ -1104,7 +1105,7 @@ return [
             ],
         ],
         'field20' => [
-            'exclude' => 1,
+            'exclude' => true,
             'label'  => 'LLL:EXT:sav_librarymvc_example0/Resources/Private/Language/locallang_db.xlf:tx_savlibrarymvcexample0_domain_model_table1.field20',
             'config' => [
                 'type' => 'inline',
@@ -1122,52 +1123,82 @@ return [
             ],
         ],
         'field3' => [
-            'exclude' => 1,
+            'exclude' => true,
             'label'  => 'LLL:EXT:sav_librarymvc_example0/Resources/Private/Language/locallang_db.xlf:tx_savlibrarymvcexample0_domain_model_table1.field3',
             'config' => [
                 'type' => 'check',
                 'cols' => 4,
                 'items' => [
-                        ['LLL:EXT:sav_librarymvc_example0/Resources/Private/Language/locallang_db.xlf:tx_savlibrarymvcexample0_domain_model_table1.field3.I.1', ''],
-                        ['LLL:EXT:sav_librarymvc_example0/Resources/Private/Language/locallang_db.xlf:tx_savlibrarymvcexample0_domain_model_table1.field3.I.2', ''],
-                        ['LLL:EXT:sav_librarymvc_example0/Resources/Private/Language/locallang_db.xlf:tx_savlibrarymvcexample0_domain_model_table1.field3.I.3', ''],
-                        ['LLL:EXT:sav_librarymvc_example0/Resources/Private/Language/locallang_db.xlf:tx_savlibrarymvcexample0_domain_model_table1.field3.I.4', ''],
+                        [
+                        	'label' => 'LLL:EXT:sav_librarymvc_example0/Resources/Private/Language/locallang_db.xlf:tx_savlibrarymvcexample0_domain_model_table1.field3.I.1',
+                        	'value' => ''
+                        ],
+                        [
+                        	'label' => 'LLL:EXT:sav_librarymvc_example0/Resources/Private/Language/locallang_db.xlf:tx_savlibrarymvcexample0_domain_model_table1.field3.I.2',
+                        	'value' => ''
+                        ],
+                        [
+                        	'label' => 'LLL:EXT:sav_librarymvc_example0/Resources/Private/Language/locallang_db.xlf:tx_savlibrarymvcexample0_domain_model_table1.field3.I.3',
+                        	'value' => ''
+                        ],
+                        [
+                        	'label' => 'LLL:EXT:sav_librarymvc_example0/Resources/Private/Language/locallang_db.xlf:tx_savlibrarymvcexample0_domain_model_table1.field3.I.4',
+                        	'value' => ''
+                        ],
                 ],
             ],
         ],
         'field11' => [
-            'exclude' => 1,
+            'exclude' => true,
             'label'  => 'LLL:EXT:sav_librarymvc_example0/Resources/Private/Language/locallang_db.xlf:tx_savlibrarymvcexample0_domain_model_table1.field11',
             'config' => [
                 'type' => 'radio',
                 'items' => [
-                    ['LLL:EXT:sav_librarymvc_example0/Resources/Private/Language/locallang_db.xlf:tx_savlibrarymvcexample0_domain_model_table1.field11.I.1', ''],
-                    ['LLL:EXT:sav_librarymvc_example0/Resources/Private/Language/locallang_db.xlf:tx_savlibrarymvcexample0_domain_model_table1.field11.I.2', '1'],
-                    ['LLL:EXT:sav_librarymvc_example0/Resources/Private/Language/locallang_db.xlf:tx_savlibrarymvcexample0_domain_model_table1.field11.I.3', '3'],
+                    [
+                    	'label' => 'LLL:EXT:sav_librarymvc_example0/Resources/Private/Language/locallang_db.xlf:tx_savlibrarymvcexample0_domain_model_table1.field11.I.1',
+                    	'value' => ''
+                    ],
+                    [
+                    	'label' => 'LLL:EXT:sav_librarymvc_example0/Resources/Private/Language/locallang_db.xlf:tx_savlibrarymvcexample0_domain_model_table1.field11.I.2',
+                    	'value' => '1'
+                    ],
+                    [
+                    	'label' => 'LLL:EXT:sav_librarymvc_example0/Resources/Private/Language/locallang_db.xlf:tx_savlibrarymvcexample0_domain_model_table1.field11.I.3',
+                    	'value' => '3'
+                    ],
                 ],
             ],
         ],
         'field21' => [
-            'exclude' => 1,
+            'exclude' => true,
             'label'  => 'LLL:EXT:sav_librarymvc_example0/Resources/Private/Language/locallang_db.xlf:tx_savlibrarymvcexample0_domain_model_table1.field21',
             'config' => [
                 'type' => 'radio',
                 'items' => [
-                    ['LLL:EXT:sav_librarymvc_example0/Resources/Private/Language/locallang_db.xlf:tx_savlibrarymvcexample0_domain_model_table1.field21.I.1', ''],
-                    ['LLL:EXT:sav_librarymvc_example0/Resources/Private/Language/locallang_db.xlf:tx_savlibrarymvcexample0_domain_model_table1.field21.I.2', '1'],
-                    ['LLL:EXT:sav_librarymvc_example0/Resources/Private/Language/locallang_db.xlf:tx_savlibrarymvcexample0_domain_model_table1.field21.I.3', '2'],
+                    [
+                    	'label' => 'LLL:EXT:sav_librarymvc_example0/Resources/Private/Language/locallang_db.xlf:tx_savlibrarymvcexample0_domain_model_table1.field21.I.1',
+                    	'value' => ''
+                    ],
+                    [
+                    	'label' => 'LLL:EXT:sav_librarymvc_example0/Resources/Private/Language/locallang_db.xlf:tx_savlibrarymvcexample0_domain_model_table1.field21.I.2',
+                    	'value' => '1'
+                    ],
+                    [
+                    	'label' => 'LLL:EXT:sav_librarymvc_example0/Resources/Private/Language/locallang_db.xlf:tx_savlibrarymvcexample0_domain_model_table1.field21.I.3',
+                    	'value' => '2'
+                    ],
                 ],
             ],
         ],
         'field22' => [
-            'exclude' => 1,
+            'exclude' => true,
             'label'  => 'LLL:EXT:sav_librarymvc_example0/Resources/Private/Language/locallang_db.xlf:tx_savlibrarymvcexample0_domain_model_table1.field22',
             'config' => [
                 'type' => 'none',
             ],
         ],
         'field23' => [
-            'exclude' => 1,
+            'exclude' => true,
             'label'  => 'LLL:EXT:sav_librarymvc_example0/Resources/Private/Language/locallang_db.xlf:tx_savlibrarymvcexample0_domain_model_table1.field23',
             'config' => [
                 'type' => 'inline',
@@ -1184,26 +1215,31 @@ return [
                 ],
             ],
         ],
-        'field24' => [
-            'exclude' => 1,
-            'label'  => 'LLL:EXT:sav_librarymvc_example0/Resources/Private/Language/locallang_db.xlf:tx_savlibrarymvcexample0_domain_model_table1.field24',
+        'field10' => [
+            'exclude' => true,
+            'label'  => 'LLL:EXT:sav_librarymvc_example0/Resources/Private/Language/locallang_db.xlf:tx_savlibrarymvcexample0_domain_model_table1.field10',
             'config' => [
-                'type'  => 'input',
-                'size'  => '13',
-                'max' => '13',
-                'eval'  => 'double2',
-                'checkbox'  => '0',
+                'type'  => 'number',
+                'size'  => 4,
+                'range' => [
+                    'upper'  => 999999,
+                    'lower'  => 0
+                ],
                 'default' => 0
             ],
         ],
     ],
     'types' => [
         '0' => [
-            'showitem' => 'hidden, field2, field1, field8, field9' . ', field4, field5, field10, field7, field6, field12, field13, field14, field15, field16, field17, field18, field19, field20, field3, field11, field21, field22, field23, field24',
+            'showitem' => 'hidden, field1, field2, field8, field9' . ', field4, field5, field24, field7, field6, field12, field13, field14, field15, field16, field17, field18, field19, field20, field3, field11, field21, field22, field23, field10',
+            'columnsOverrides' => [
+                'field9' => [
+                    'defaultExtras' => 'richtext[]:rte_transform[mode=ts]',
+                ],
+            ],
         ],
     ],
     'palettes' => [
         '1' => ['showitem' => '']
     ],
 ];
-

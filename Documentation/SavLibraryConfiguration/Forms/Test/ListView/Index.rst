@@ -1,4 +1,3 @@
-
 .. include:: ../../../../Includes.txt
 
 .. _listView.13354593:
@@ -33,43 +32,29 @@ Item Template
 Selected Fields
 ===============
 
-.. _listView.13354593.13354593.222419149.tx_savlibrarymvcexample0_domain_model_table1.field1:
+.. _listView.13354593.13354593.217895432.tx_savlibrarymvcexample0_domain_model_table1.field1:
 
-..  container:: row m-0 p-0
+.. card::
+   :class: mb-md-2
 
-    .. container:: card px-0 h-100
+  :Field: field1
 
-        ..  rst-class:: card-header
+  :Type: :ref:`String <yolftypo3/sav-library-kickstarter:string>`
 
-            ..  rubric:: ``field1``
+  :Configuration:
 
-        .. container:: card-body
+  ::
 
-            :Label: String
-            :Type: :ref:`String <savlibrarykickstarter:string>`
-
-            :Configuration:
-
-            ::
-
-                - func = makeItemLink
-                - orderLinkInTitle = 1
-                - orderLinkInTitleSetup = :value:ascdesc
+    - func = makeItemLink
+    - orderLinkInTitle = 1
+    - orderLinkInTitleSetup = :value:ascdesc
 
 
-.. _listView.13354593.13354593.222419149.tx_savlibrarymvcexample0_domain_model_table1.field4:
+.. _listView.13354593.13354593.217895432.tx_savlibrarymvcexample0_domain_model_table1.field4:
 
-..  container:: row m-0 p-0
+.. card::
+   :class: mb-md-2
 
-    .. container:: card px-0 h-100
+  :Field: field4
 
-        ..  rst-class:: card-header
-
-            ..  rubric:: ``field4``
-
-        .. container:: card-body
-
-            :Label: Date
-            :Type: :ref:`Date <savlibrarykickstarter:date>`
-
-
+  :Type: :ref:`Date <yolftypo3/sav-library-kickstarter:date>`

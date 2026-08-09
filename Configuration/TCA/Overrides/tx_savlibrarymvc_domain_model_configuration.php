@@ -160,4 +160,3 @@ $GLOBALS['TCA']['tx_savlibrarymvc_domain_model_configuration']['ctrl']['EXT']['s
             ],
     ],
 ];
-

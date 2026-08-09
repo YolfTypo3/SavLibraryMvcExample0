@@ -3,7 +3,7 @@
         "1": {
             "extensionKey": "sav_librarymvc_example0",
             "libraryVersion": "14.3.0",
-            "section": "documentation",
+            "section": "newTables",
             "itemKey": 1,
             "pluginTitle": "SAV Library Mvc Example0 - Test",
             "libraryType": 2,
@@ -16,7 +16,7 @@
             "isLoadedExtension": true,
             "currentLibraryVersion": "1.0.1",
             "keepExtLocalConf": "",
-            "compatibility": "14x",
+            "compatibility": "13x-14x",
             "vendorName": "YolfTypo3",
             "wrongCompatibility": false,
             "addPluginIcon": 0,
@@ -39,7 +39,7 @@
     },
     "emconf": {
         "1": {
-            "version": "14.3.0",
+            "version": "13.4.0",
             "title": "SAV Library Mvc Example0 - Test",
             "description": "An extension to illustrate the SAV Library Mvc",
             "state": "stable",
@@ -458,13 +458,12 @@
                         "4": "",
                         "5": ""
                     },
-                    "conf_files_type": "imagefile",
+                    "conf_files_type": "images",
                     "conf_files": 2,
                     "conf_max_filesize": "",
                     "conf_files_selsize": 2,
                     "displayCondition": "",
-                    "extensionScannerIgnoreLine": "",
-                    "conf_files_uploadFolder": "1:\/user_upload\/Test"
+                    "extensionScannerIgnoreLine": ""
                 },
                 "12": {
                     "fieldname": "field14",
@@ -1353,6 +1352,32 @@
                     "conf_max": "",
                     "conf_required": "",
                     "conf_varchar": ""
+                },
+                "2": {
+                    "fieldname": "field2",
+                    "title": "Files",
+                    "type": "Files",
+                    "viewKey": 3,
+                    "order": {
+                        "1": 2,
+                        "2": 2,
+                        "3": 2,
+                        "4": 2,
+                        "5": 2
+                    },
+                    "selected": {
+                        "3": ""
+                    },
+                    "folders": {
+                        "3": 6
+                    },
+                    "conf_files_type": "images",
+                    "conf_files": 3,
+                    "conf_max_filesize": "",
+                    "conf_files_selsize": "",
+                    "configuration": {
+                        "3": ""
+                    }
                 }
             },
             "tablename": "table6",
@@ -1377,13 +1402,13 @@
                 "1": [
                     1
                 ],
-                "3": []
+                "3": {
+                    "6": 2
+                }
             },
             "folderKeys": {
-                "3": 5
-            },
-            "label_userFunc": "",
-            "moveAfter": -1
+                "3": 6
+            }
         }
     },
     "views": {
@@ -1566,7 +1591,7 @@
         "1": {
             "title": "SAV Librarymvc Example0",
             "gitHubRepository": "YolfTypo3\/SavLibraryMvcExample0",
-            "gitHubBranch": "master",
+            "gitHubBranch": "master\/sav_librarymvc_example0",
             "projectContact": "yolf.typo3@orange.fr",
             "projectDiscussion": "",
             "projectHome": "https:\/\/github.com\/YolfTypo3\/SavLibraryMvcExample0",

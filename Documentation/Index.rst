@@ -19,10 +19,10 @@ SAV Librarymvc Example0
    An extension to illustrate the SAV Library Mvc
 
 :Keywords:
-   sav_librarymvc_example0    
+   sav_librarymvc_example0
 
 :Copyright:
-   2023
+   2026
 
 :Author:
    Laurent Foulloy
@@ -53,4 +53,10 @@ Table of Contents
    EntityRelationshipDiagram/Index
    SavLibraryConfiguration/Index
    Changelog/Index
-   
+
+.. Meta Menu
+
+.. toctree::
+   :hidden:
+
+   Sitemap  

@@ -19,29 +19,30 @@ namespace YolfTypo3\SavLibrarymvcExample0\Domain\Model;
  * Table3 model for the extension SavLibrarymvcExample0
  *
  */
+use TYPO3\CMS\Extbase\Annotation\Validate;
 use YolfTypo3\SavLibraryMvc\Domain\Model\DefaultModel;
+use YolfTypo3\SavLibrarymvcExample0\Domain\Repository\Table3Repository;
 
 class Table3 extends DefaultModel
 {
     /**
-     * @var \YolfTypo3\SavLibrarymvcExample0\Domain\Repository\Table3Repository
+     * @var Table3Repository
      */
     protected $repository = null;
 
+    #[Validate(validator: 'String')]
     /**
      * The <field1> variable.
      *
      * @var string
-     * @TYPO3\CMS\Extbase\Annotation\Validate("String")
      */
     protected $field1;
 
+    #[Validate(validator: 'DateTime')]
     /**
      * The <field2> variable.
      *
      * @var \DateTime
-     * @TYPO3\CMS\Extbase\Annotation\Validate("DateTime")
-     * @TYPO3\CMS\Extbase\Annotation\Validate("YolfTypo3\SavLibraryMvc\Domain\Model\Validator\Empty")
      */
     protected $field2;
 
@@ -49,6 +50,14 @@ class Table3 extends DefaultModel
      * Constructor.
      */
     public function __construct()
+    {
+        $this->initializeObject();
+    }
+
+    /**
+     * Object initializer.
+     */
+    public function initializeObject(): void
     {
         $this->field2 = new \DateTime();
     }
@@ -69,7 +78,7 @@ class Table3 extends DefaultModel
      * @param string $field1
      * @return void
      */
-    public function setField1($field1)
+    public function setField1($field1): void
     {
         $this->field1 = $field1;
     }
@@ -90,10 +99,9 @@ class Table3 extends DefaultModel
      * @param \DateTime $field2
      * @return void
      */
-    public function setField2($field2)
+    public function setField2($field2): void
     {
         $this->field2 = $field2;
     }
 
 }
-

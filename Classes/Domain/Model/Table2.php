@@ -19,20 +19,22 @@ namespace YolfTypo3\SavLibrarymvcExample0\Domain\Model;
  * Table2 model for the extension SavLibrarymvcExample0
  *
  */
+use TYPO3\CMS\Extbase\Annotation\Validate;
 use YolfTypo3\SavLibraryMvc\Domain\Model\DefaultModel;
+use YolfTypo3\SavLibrarymvcExample0\Domain\Repository\Table2Repository;
 
 class Table2 extends DefaultModel
 {
     /**
-     * @var \YolfTypo3\SavLibrarymvcExample0\Domain\Repository\Table2Repository
+     * @var Table2Repository
      */
     protected $repository = null;
 
+    #[Validate(validator: 'String')]
     /**
      * The <field1> variable.
      *
      * @var string
-     * @TYPO3\CMS\Extbase\Annotation\Validate("String")
      */
     protected $field1;
 
@@ -40,6 +42,14 @@ class Table2 extends DefaultModel
      * Constructor.
      */
     public function __construct()
+    {
+        $this->initializeObject();
+    }
+
+    /**
+     * Object initializer.
+     */
+    public function initializeObject(): void
     {
     }
 
@@ -59,10 +69,9 @@ class Table2 extends DefaultModel
      * @param string $field1
      * @return void
      */
-    public function setField1($field1)
+    public function setField1($field1): void
     {
         $this->field1 = $field1;
     }
 
 }
-

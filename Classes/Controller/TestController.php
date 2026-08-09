@@ -15,6 +15,7 @@
 
 namespace YolfTypo3\SavLibrarymvcExample0\Controller;
 
+use Psr\Http\Message\ResponseInterface;
 use YolfTypo3\SavLibrarymvcExample0\Domain\Model\Table1;
 use YolfTypo3\SavLibrarymvcExample0\Domain\Repository\Table1Repository;
 
@@ -73,11 +74,10 @@ final class TestController extends \YolfTypo3\SavLibraryMvc\Controller\DefaultCo
      * Save action for this controller
      *
      * @param Table1 $data
-     * @return void
+     * @return ResponseInterface
      */
-    public function saveAction(Table1 $data)
+    public function saveAction(Table1 $data): ResponseInterface
     {
-        $this->save($data);
+        return $this->save($data);
     }
 }
-

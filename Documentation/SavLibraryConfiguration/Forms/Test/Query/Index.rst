@@ -1,6 +1,6 @@
 .. include:: ../../../../Includes.txt
 
-.. _queryTest:
+.. _query&lt;Test:
 .. role:: red
 
 =====
@@ -9,7 +9,6 @@ Query
 
 The query ``Test`` contains the following configuration.
 
- 
 Main Table
 ==========
 
@@ -21,33 +20,26 @@ Main Table
 
 
 
+GROUP BY Clause
+===============
 
+::
 
+   tx_savlibrarymvcexample0_table1.uid
 
- 
 WHERE Tags
 ==========
 
-
-**Name:** ``field1+``
-
-   
-**ORDER BY Clause:**
+:Name: ``field1+``
+:ORDER BY Clause:
 
 ::
 
-   field1 ASC  
-    
+   field1 ASC
 
-**Name:** ``field1-``
-
-   
-**ORDER BY Clause:**
+:Name: ``field1-``
+:ORDER BY Clause:
 
 ::
 
-   field1 DESC  
-    
-
-
-
+   field1 DESC
