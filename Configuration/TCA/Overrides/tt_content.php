@@ -12,9 +12,9 @@ $pluginSignature = ExtensionUtility::registerPlugin(
     'SavLibrarymvcExample0',
 	'Default',
 	'LLL:EXT:sav_librarymvc_example0/Resources/Private/Language/locallang_db.xlf:tt_content.list_type_pi1',
-	null,
+	'ext-savlibrarymvcexample0-wizard',
 	'plugins',
-	'',
+	'An extension to illustrate the SAV Library Mvc',
 	'FILE:EXT:sav_librarymvc_example0/Configuration/Flexforms/ExtensionFlexform.xml'
 );
 
